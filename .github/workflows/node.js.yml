@@ -19,4 +19,4 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
-    - run: npm test
+          command: npm run test:e2e:ui:headless
