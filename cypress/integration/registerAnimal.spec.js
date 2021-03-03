@@ -13,7 +13,6 @@ describe("When the user wants to register a cat", () => {
     cy.get("#terms-and-condition").click();
 
     cy.get('button[type="submit"]').click();
-    cy.visit("http://animal-shelter-ui.herokuapp.com/animal/list");
   });
 
   it("Then the cat should be listed with the right name, breed, gender and if it is vaccined", () => {
@@ -28,11 +27,11 @@ describe("When the user wants to register a cat", () => {
     );
 
     cy.get(
-      `[data-testid="${catName}-container"] [name="gender-cat"] svg`
-    ).should("have.attr", "data-icon", "mars");
+      `[data-testid="${catName}-container"] [name="gender-cat"] div`
+    ).should("have.attr", "name", "male-icon");
 
     cy.get(
-      `[data-testid="${catName}-container"] [name="is-vaccined-cat"] svg`
-    ).should("have.attr", "data-icon", "heart");
+      `[data-testid="${catName}-container"] [name="is-vaccinated-cat"] div`
+    ).should("have.attr", "name", "health-icon");
   });
 });
